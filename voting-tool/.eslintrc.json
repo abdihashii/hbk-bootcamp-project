@@ -1,0 +1,45 @@
+{
+  "root": true,
+  "plugins": [
+    "import",
+    "react",
+    "react-hooks"
+  ],
+  "extends": [
+    "plugin:import/warnings",
+    "plugin:import/errors",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "impliedStrict": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "rules": {
+    "react/prop-types": "warn",
+    "max-len": "off",
+    "no-param-reassign": "off",
+    "react/forbid-prop-types": "off",
+    "no-alert": "warn",
+    "no-console": "warn",
+    "react/no-did-mount-set-state": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-lone-blocks": "error",
+    "object-curly-spacing": ["error", "always", { "arraysInObjects": false, "objectsInObjects": false }],
+    "prefer-destructuring": ["error", { "array": false, "object": true }],
+    "react/prefer-stateless-function": "error",
+    "react-hooks/rules-of-hooks": "error"
+  },
+  "globals": {}
+}
