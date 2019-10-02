@@ -12,11 +12,11 @@ Welcome to the Final Group Project!
 
 Before you code do the following:
 
-- Choose a Name for the Group
-- Select a Team Mascot from Google Images
-- Take a Group Picture
-- Motivational Team Slogan
-- Select Team Colors for your theme (the team mascot colors are a good source for this)
+- Choose a Name for the Group: `HBK`
+- Select a Team Mascot from Google Images: `Corgi`
+- Take a Group Picture: `Done`
+- Motivational Team Slogan: `Vote for Corgi's`
+- Select Team Colors for your theme (the team mascot colors are a good source for this): `The color of Corgi's`
 
 After I approve the above for your group, you may begin your work.
 
