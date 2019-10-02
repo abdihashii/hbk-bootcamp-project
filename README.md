@@ -1,5 +1,11 @@
 # hbk-bootcamp-project
 
+# Our Group
+
+- Haji
+- Beverly
+- Ken
+
 # Front-End Boot Camp Group Project
 
 Welcome to the Final Group Project!
@@ -72,7 +78,7 @@ The application must support 3 of 3 workflows. To switch between work flows cons
 
 - Concerning state, use Redux to manage application state. Use React to manage form control state (controlled components). Please use React-Redux to connect React and Redux, and use Redux-Thunk for handling asychronous operations. Consider using React-Redux Hooks instead of the Connect API
 
-- Please use React Hooks to manage component state. 
+- Please use React Hooks to manage component state.
 
 ## Conditions of Victory
 
@@ -92,4 +98,4 @@ The application must support 3 of 3 workflows. To switch between work flows cons
 
 - Keep the database structure in db.json simple. Do not over complicate the data structure with deeply nested objects and such. Think in terms of REST services and relatively flat independent resources. Another way to think of endpoints is as database tables. Just as tables are related to each other, simple resource-based endpoints are related to each other.
 
-- Please ask me to review your project design and source code from time to time. Better to **have** me correct your code during development than during the presentation. Also, when you ask questions, I will attempt to help you come up with the answer on your own before giving you the answer. I will ask questions such as "do you remember when we covered such and such" to help you remember something we covered to see if you can reason your way to the answer instead of me telling you directly. 
+- Please ask me to review your project design and source code from time to time. Better to **have** me correct your code during development than during the presentation. Also, when you ask questions, I will attempt to help you come up with the answer on your own before giving you the answer. I will ask questions such as "do you remember when we covered such and such" to help you remember something we covered to see if you can reason your way to the answer instead of me telling you directly.
