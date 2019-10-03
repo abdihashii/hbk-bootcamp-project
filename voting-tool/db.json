@@ -14,10 +14,15 @@
   "elections": [
     {
       "id": 1,
+      "electionName": "Corgis",
       "questions": [
-        "Do you have a favorite color?",
-        "Do you have a favorite number?"
-      ]
+        {
+          "id": 1,
+          "text": "Do you like corgis?",
+          "yesCount": 0
+        }
+      ],
+      "voterIDs": [1, 2, 3]
     }
   ],
   "ballots": [
@@ -25,10 +30,7 @@
       "id": 1,
       "voterId": 1,
       "electionId": 1,
-      "answers": [
-        true,
-        false
-      ]
+      "answers": [true, false]
     }
   ]
 }

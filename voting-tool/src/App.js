@@ -11,7 +11,7 @@ function App() {
         <li><a href="/#/register">register</a></li>
         <li><a href="/#/vote">vote</a></li>
         <li><a href="/#/ballot">ballot</a></li>
-        <li><a href="/#/create-ballot">create-ballot</a></li>
+        <li><a href="/#/create-election">create-election</a></li>
       </ul>
     </>
   );
