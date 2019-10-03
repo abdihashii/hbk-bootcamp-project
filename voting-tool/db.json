@@ -14,15 +14,15 @@
   "elections": [
     {
       "id": 1,
-      "electionName": "Corgis",
+      "name": "Corgis",
       "questions": [
         {
           "id": 1,
           "text": "Do you like corgis?",
-          "yesCount": 0
+          "yesCount": 3
         }
       ],
-      "voterIDs": [1, 2, 3]
+      "voterIds": [1, 2, 3]
     }
   ],
   "ballots": [

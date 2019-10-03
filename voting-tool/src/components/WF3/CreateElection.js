@@ -1,21 +1,24 @@
 import React from 'react';
-import { ElectionTableRow } from './ElectionTableRow';
+import { ElectionTable } from './ElectionTable';
+import { ElectionResultsTable } from './ElectionResultsTable';
+import { useForm } from './useForm';
+
 // import PropTypes from 'prop-types';
 
 
-export const CreateElection = (props) => {
+export const CreateElection = ({ elections, createAddElection, createAddQuestion }) => {
 
-  console.log(props);
+  let electionToShow;
+
+  const [electionForm, change] = useForm({});
 
 
-  // change = (e) => {
-  //   this.setState({
-  //     [e.target.name]: e.target.type === 'number'
-  //       ? Number(e.target.value)
-  //       : e.target.value,
-  //   });
-  // }
-  // value = { this.state.model } onChange = { this.change }
+  const showResults = (id) => {
+    electionToShow = elections.find(x => x.id === id);
+
+    console.log('show election', id);
+  }
+
 
   return <>
     <h1>Manage Elections</h1>
@@ -23,29 +26,24 @@ export const CreateElection = (props) => {
 
     <div>
       <label htmlFor="name-input">Election Name: </label>
-      <input type="text" id="name-input" name="model"
+      <input type="text" id="name-input" name="name" value={electionForm.name} onChange={change}
       />
     </div>
 
+    <h3>Add New Yes-or-No Question</h3>
 
-    <h3>Add Question</h3>
-    <button type='button'>Add New Question</button>
+    {/* 
+    <label htmlFor="question-input">Question 1: </label>
+    <input type="text" id="question-input" name="question"
+    /> */}
 
-    <button>submit</button>
+    <p><button type='button' onClick={() => createAddQuestion(elections.length + 1)}>Add New Question</button></p>
 
-    <h2>View Available Elections</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Election Name</th>
-          <th>Results</th>
-        </tr>
-      </thead>
-      <tbody>
-        <ElectionTableRow />
-      </tbody>
-    </table>
+    <p><button>Submit Election</button></p>
 
+    <ElectionTable elections={elections} showResults={showResults} />
+
+    <ElectionResultsTable election={electionToShow} />
 
   </>
 };
