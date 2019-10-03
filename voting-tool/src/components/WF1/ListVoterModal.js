@@ -8,7 +8,11 @@ import VoterRow from './VoterRow';
 import ListTableHeader from './ListTableHeader';
 
 const AddNewVoterModal = (props) => {
-  const { open, onClose, voters, updateVoter, deleteVoter, deleteMultipleVoters } = props;
+  const {
+    open, onClose, voters,
+    updateVoter, deleteVoter, deleteMultipleVoters,
+    sortAscAction,
+  } = props;
 
   const [ editId, setEditId ] = useState(-1);
   const [ isChecked, setChecked ] = useState({});
@@ -57,7 +61,7 @@ const AddNewVoterModal = (props) => {
       <DialogContent>
         <table>
           <tbody>
-            <ListTableHeader />
+            <ListTableHeader sortAscAction={sortAscAction} />
             { voters.map((voter, i) => {
               const isEditing = editId === i;
               const onEdit = () => !isEditing ? setEditId(i) : setEditId(-1);

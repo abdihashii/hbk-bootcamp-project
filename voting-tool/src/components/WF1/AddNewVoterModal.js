@@ -36,7 +36,7 @@ const AddNewVoterModal = (props) => {
         <TextField label="Phone" value={phone} onChange={handleChange(setPhone)} fullWidth />
       </DialogContent>
       <DialogActions>
-        <Button variant="contained" color="primary" onClick={handleSubmit}>Register</Button>
+        <Button variant="contained" color="primary" onClick={handleSubmit}>Complete Registration</Button>
         <Button variant="contained" color="secondary" onClick={onClose}>Cancel</Button>
       </DialogActions>
     </Dialog>

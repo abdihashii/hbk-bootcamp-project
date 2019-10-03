@@ -1,0 +1,94 @@
+{
+  "voters": [
+    {
+      "firstName": "A",
+      "lastName": "A",
+      "address": "A",
+      "city": "A",
+      "birthDate": "A",
+      "email": "A",
+      "phone": "A",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "firstName": "B",
+      "lastName": "B",
+      "address": "B",
+      "city": "B",
+      "birthDate": "B",
+      "email": "B",
+      "phone": "B"
+    },
+    {
+      "firstName": "C",
+      "lastName": "C",
+      "address": "C",
+      "city": "C",
+      "birthDate": "C",
+      "email": "C",
+      "phone": "C",
+      "id": 4
+    },
+    {
+      "firstName": "D",
+      "lastName": "D",
+      "address": "D",
+      "city": "D",
+      "birthDate": "D",
+      "email": "D",
+      "phone": "D",
+      "id": 5
+    },
+    {
+      "firstName": "Z",
+      "lastName": "Z",
+      "address": "Z",
+      "city": "Z",
+      "birthDate": "Z",
+      "email": "Z",
+      "phone": "Z",
+      "id": 6
+    },
+    {
+      "firstName": "R",
+      "lastName": "R",
+      "address": "R",
+      "city": "R",
+      "birthDate": "R",
+      "email": "R",
+      "phone": "R",
+      "id": 7
+    },
+    {
+      "firstName": "W",
+      "lastName": "W",
+      "address": "W",
+      "city": "W",
+      "birthDate": "W",
+      "email": "W",
+      "phone": "W",
+      "id": 8
+    },
+    {
+      "firstName": "E",
+      "lastName": "E",
+      "address": "E",
+      "city": "E",
+      "birthDate": "E",
+      "email": "E",
+      "phone": "E",
+      "id": 9
+    }
+  ],
+  "elections": [
+    {
+      "id": 1,
+      "questions": [
+        "Do you have a favorite color?",
+        "Do you have a favorite number?"
+      ]
+    }
+  ],
+  "ballots": []
+}
