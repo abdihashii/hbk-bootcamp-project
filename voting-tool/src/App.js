@@ -1,10 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import Routes from './components/Routes';
 import './App.css';
 
 function App() {
   return (
-    <div>Hello World</div>
+    <>
+      <Routes />
+      <ul>
+        <li><a href="/#/">home</a></li>
+        <li><a href="/#/register">register</a></li>
+        <li><a href="/#/vote">vote</a></li>
+        <li><a href="/#/create-ballot">create-ballot</a></li>
+      </ul>
+    </>
   );
 }
 
