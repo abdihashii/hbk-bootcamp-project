@@ -15,8 +15,8 @@
     {
       "id": 1,
       "questions": [
-        "what is your favorite color?",
-        "what is your favorite number?"
+        "Do you have a favorite color?",
+        "Do you have a favorite number?"
       ]
     }
   ],
@@ -26,8 +26,8 @@
       "voterId": 1,
       "electionId": 1,
       "answers": [
-        "orange",
-        "3"
+        true,
+        false
       ]
     }
   ]
