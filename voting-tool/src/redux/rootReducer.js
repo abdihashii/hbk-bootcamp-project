@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import voters from './reducers/voterRegistration';
+import voterRegistration from './reducers/voterRegistration';
 
 const rootReducer = combineReducers({
-  voters,
+  voters: voterRegistration,
 });
 
 export default rootReducer;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route, Redirect, HashRouter } from 'react-router-dom';
-import RegisterVoter from './WF1/RegisterVoter';
-import Vote from './WF2/Vote';
-import CreateBallot from './WF3/CreateBallot';
-import Home from './common/home';
+import RegisterVoter from './containers/VoterContainer';
+import Vote from './components/WF2/Vote';
+import CreateBallot from './components/WF3/CreateBallot';
+import Home from './components/common/home';
 
 class Routes extends React.Component {
   render() {
