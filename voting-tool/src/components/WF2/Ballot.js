@@ -4,32 +4,19 @@ import { Checkbox, Button } from '@material-ui/core';
 
 const Ballot = ({currentElection}) => {
 
-  // const [ isChecked, setChecked ] = useState(false);
-
   const [ isChecked, setChecked ] = useState({});
 
   const onToggleChecked = (questionId) => {
+    if (isChecked[questionId] === false) {
+      console.log(`Question ${questionId} is checked`);
+    } else if (isChecked[questionId] === true) {
+      console.log(`Question ${questionId} is un-checked`);
+    }
     setChecked({
       ...isChecked,
       [questionId]: !isChecked[questionId]
     })
   };
-  
-  // const toggleCheck = index => {
-  //   if (isChecked === false) {
-  //     console.log(`${index} is checked`);
-  //   }
-  //   setChecked(!isChecked);
-  // };
-
-  // const onToggleCheck = (index) => {
-  //   // console.log(`Checked`);
-  //   setChecked(isChecked[index] = !isChecked[index]);
-  // }
-  
-  // elections[0].questions.forEach((i) => {
-  //   setChecked([...isChecked[i], false])
-  // });
 
   return (
     <>
@@ -37,12 +24,9 @@ const Ballot = ({currentElection}) => {
       <div>
         <form>
 
-
-          {/* {currentElection.questions.map((key, index) => { */}
           {currentElection.questions.map((question) => {
             return (
               <div key={question.id}>
-                {/* {console.log(question.text)} */}
                 <p>Q{question.id}</p>
                 <p>{question.text}</p>
                 <Checkbox checked={isChecked[question.id] || false} type="checkbox" name={`question-${question.id}`} color="secondary" onChange={() => onToggleChecked(question.id)}></Checkbox>
