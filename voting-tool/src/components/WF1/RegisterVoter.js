@@ -5,7 +5,7 @@ import ListVoterModal from './ListVoterModal';
 
 const RegisterVoter = (props) => {
   const {
-    refreshVoters, createVoter, updateVoter, deleteVoter,
+    refreshVoters, createVoter, updateVoter, deleteVoter, deleteMultipleVoters,
     voters,
   } = props;
 
@@ -34,6 +34,7 @@ const RegisterVoter = (props) => {
       <ListVoterModal
         updateVoter={updateVoter}
         deleteVoter={deleteVoter}
+        deleteMultipleVoters={deleteMultipleVoters}
         voters={voters}
         onClose={handleListClose}
         open={openList}

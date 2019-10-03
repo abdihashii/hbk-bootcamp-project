@@ -7,6 +7,7 @@ import {
   createVoter,
   updateVoter,
   deleteVoter,
+  deleteMultipleVoters,
 } from '../redux/actions/voterRegistration';
 
 const mapStateToProps = state => {
@@ -20,6 +21,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   createVoter,
   updateVoter,
   deleteVoter,
+  deleteMultipleVoters,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterVoter);

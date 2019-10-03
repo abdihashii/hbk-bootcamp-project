@@ -9,130 +9,15 @@
       "birthdate": "9/3/1992",
       "email": "Ken_Bigler@intuit.com",
       "phone": "6505551234"
-    },
-    {
-      "firstName": "A",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 2
-    },
-    {
-      "id": 4,
-      "firstName": "C",
-      "lastName": "C",
-      "address": "C",
-      "city": "C",
-      "birthDate": "C",
-      "email": "C",
-      "phone": "C"
-    },
-    {
-      "firstName": "A1",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 5
-    },
-    {
-      "firstName": "A2",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 6
-    },
-    {
-      "firstName": "A3",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 7
-    },
-    {
-      "firstName": "A4",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 8
-    },
-    {
-      "firstName": "A5",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 9
-    },
-    {
-      "firstName": "A6",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 10
-    },
-    {
-      "firstName": "A7",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 11
-    },
-    {
-      "firstName": "A8",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 12
-    },
-    {
-      "firstName": "A9",
-      "lastName": "A",
-      "address": "A",
-      "city": "A",
-      "birthDate": "A",
-      "email": "A",
-      "phone": "A",
-      "id": 13
     }
   ],
   "elections": [
     {
       "id": 1,
-      "electionName": "Corgis",
       "questions": [
-        {
-          "id": 1,
-          "text": "Do you like corgis?",
-          "yesCount": 0
-        }
-      ],
-      "voterIDs": [1, 2, 3]
+        "Do you have a favorite color?",
+        "Do you have a favorite number?"
+      ]
     }
   ]
 }

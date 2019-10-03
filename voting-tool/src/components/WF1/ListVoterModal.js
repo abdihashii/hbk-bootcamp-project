@@ -8,21 +8,47 @@ import VoterRow from './VoterRow';
 import ListTableHeader from './ListTableHeader';
 
 const AddNewVoterModal = (props) => {
-  const { open, onClose, voters, updateVoter, deleteVoter } = props;
+  const { open, onClose, voters, updateVoter, deleteVoter, deleteMultipleVoters } = props;
 
   const [ editId, setEditId ] = useState(-1);
   const [ isChecked, setChecked ] = useState({});
+  const [ isAnythingChecked, setIsAnythingChecked ] = useState(false);
 
   const onToggleChecked = (voterId) => {
+    const newSelection = !isChecked[voterId];
+    if (newSelection) {
+      setIsAnythingChecked(true);
+    } else {
+      let hasCheck = false;
+      Object.keys(isChecked).forEach((key) => {
+        if (parseInt(key, 10) !== parseInt(voterId, 10) && isChecked[key]) {
+          hasCheck = true;
+        }
+      });
+      setIsAnythingChecked(hasCheck);
+    }
+
     setChecked({
       ...isChecked,
-      [voterId]: !isChecked[voterId]
+      [voterId]: newSelection,
     });
   };
 
   const handleSave = (voter) => {
     updateVoter(voter);
     setEditId(-1);
+  }
+
+  const handleMultiDelete = () => {
+    const toDelete = [];
+    Object.keys(isChecked).forEach((key) => {
+      if (isChecked[key]) {
+        toDelete.push(key);
+      }
+    });
+    deleteMultipleVoters(toDelete);
+    setChecked({});
+    setIsAnythingChecked(false);
   }
 
   return (
@@ -55,7 +81,7 @@ const AddNewVoterModal = (props) => {
         </table>
       </DialogContent>
       <DialogActions>
-        {/* <Button variant="contained" color="primary" onClick={onClose}>Delete All Checked</Button> */}
+        {isAnythingChecked && <Button variant="contained" color="primary" onClick={handleMultiDelete}>Delete Selected Voters</Button> }
         <Button variant="contained" color="secondary" onClick={onClose}>Close</Button>
       </DialogActions>
     </Dialog>
