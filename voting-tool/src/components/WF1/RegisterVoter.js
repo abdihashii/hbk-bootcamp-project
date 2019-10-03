@@ -4,7 +4,10 @@ import AddNewVoterModal from './AddNewVoterModal';
 import ListVoterModal from './ListVoterModal';
 
 const RegisterVoter = (props) => {
-  const { refreshVoters, createVoters, updateVoters, deleteVoters } = props;
+  const {
+    refreshVoters, createVoter, updateVoter, deleteVoter, deleteMultipleVoters,
+    voters,
+  } = props;
 
   useEffect(() => {
     refreshVoters();
@@ -24,13 +27,15 @@ const RegisterVoter = (props) => {
       <Button variant="contained" color="primary" onClick={handleAddOpen}>Open Add</Button>
       <Button variant="contained" color="secondary" onClick={handleListOpen}>Open List</Button>
       <AddNewVoterModal
-        createVoters={createVoters}
+        createVoter={createVoter}
         onClose={handleAddClose}
         open={openAdd}
       />
       <ListVoterModal
-        updateVoters={updateVoters}
-        deleteVoters={deleteVoters}
+        updateVoter={updateVoter}
+        deleteVoter={deleteVoter}
+        deleteMultipleVoters={deleteMultipleVoters}
+        voters={voters}
         onClose={handleListClose}
         open={openList}
       />

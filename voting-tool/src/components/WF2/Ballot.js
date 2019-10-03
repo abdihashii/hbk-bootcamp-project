@@ -1,20 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Ballot = ({elections}) => {
+import { Checkbox, Button } from '@material-ui/core';
+
+const Ballot = ({currentElection}) => {
+
+  const [ isChecked, setChecked ] = useState({});
+
+  const onToggleChecked = (questionId) => {
+    if (isChecked[questionId] === false) {
+      console.log(`Question ${questionId} is checked`);
+    } else if (isChecked[questionId] === true) {
+      console.log(`Question ${questionId} is un-checked`);
+    }
+    setChecked({
+      ...isChecked,
+      [questionId]: !isChecked[questionId]
+    })
+  };
 
   return (
     <>
       <div>Ballot</div>
       <div>
-        <p>Q1:</p>
-        <p>{elections[0].questions[0]}</p>
-        <input type="checkbox"></input>
-        <p>Q2:</p>
-        <p>{elections[0].questions[1]}</p>
-        <input type="checkbox"></input>
-        <p>Q3:</p>
-        <p>{elections[0].questions[2]}</p>
-        <input type="checkbox"></input>
+        <form>
+
+          {currentElection.questions.map((question) => {
+            return (
+              <div key={question.id}>
+                <p>Q{question.id}</p>
+                <p>{question.text}</p>
+                <Checkbox checked={isChecked[question.id] || false} type="checkbox" name={`question-${question.id}`} color="secondary" onChange={() => onToggleChecked(question.id)}></Checkbox>
+              </div>
+            );
+          })}
+
+          <div>
+            <Button variant="contained" color="primary">Cast Vote</Button>
+          </div>
+        </form>
       </div>
     </>
   );

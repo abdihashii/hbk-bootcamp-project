@@ -1,14 +1,10 @@
 import React from 'react';
 
-import Button from '@material-ui/core/Button';
+import { Button, Input } from '@material-ui/core';
 
 const Vote = () => {
 
-  const beginBallot = () => {
-
-    window.location.href = '/#/vote/ballot';
-    
-  };
+  const routeToBallot = () => {window.location.href = '/#/vote/ballot';};
 
   return (
     <div>
@@ -17,10 +13,10 @@ const Vote = () => {
         <form>
           <label htmlFor="voter-valid-input">Identifying Information</label>
           <div>
-            <input type="number" id="voter-valid-input" name="voterId" />
+            <Input type="number" id="voter-valid-input" name="voterId" autoFocus={true} />
           </div>
           <div>
-            <Button variant="contained" color="primary" onClick={beginBallot}>Submit</Button>
+            <Button variant="contained" color="primary" onClick={routeToBallot}>Submit</Button>
           </div>
         </form>
       </div>

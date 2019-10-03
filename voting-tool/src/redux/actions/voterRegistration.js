@@ -47,7 +47,7 @@ export const createVoter = voter => {
       body: JSON.stringify(voter)
     })
       .then(res => res.json())
-      .then(car => dispatch(createActionDone(car)));
+      .then(v => dispatch(createActionDone(v)));
   };
 };
 
@@ -71,5 +71,14 @@ export const deleteVoter = id => {
       method: 'DELETE',
     })
       .then(() => dispatch(deleteActionDone(id)));
+  };
+};
+
+export const deleteMultipleVoters = removeIds => {
+  return dispatch => {
+    dispatch(deleteMultipleActionRequest(removeIds));
+    const promises = removeIds.map((id) => fetch(`${VOTER_URL}/${id}`, { method: 'DELETE' }));
+    return Promise.all(promises)
+      .then(() => dispatch(refreshVoters()));
   };
 };
