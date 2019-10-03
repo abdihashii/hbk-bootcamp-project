@@ -20,7 +20,7 @@ class Routes extends React.Component {
             <Route exact path="/vote" component={Vote} />
             {/* <Redirect from={`/vote*`} to={'/vote'} /> */}
 
-            <Route exact path="/vote/ballot" render={() => <Ballot elections={[{id: 1, questions: ["q1", "q2"]}]} />} />
+            <Route exact path="/vote/ballot" render={() => <Ballot elections={[{id: 1, questions: ["Do you own a dog?", "Do you like Corgis?", "Would you own a Corgi?"]}]} />} />
             <Redirect from={`/vote/ballot*`} to={'/vote/ballot'} />
 
             <Route exact path="/create-ballot" component={CreateBallot} />

@@ -10,6 +10,7 @@ function App() {
         <li><a href="/#/">home</a></li>
         <li><a href="/#/register">register</a></li>
         <li><a href="/#/vote">vote</a></li>
+        <li><a href="/#/ballot">ballot</a></li>
         <li><a href="/#/create-ballot">create-ballot</a></li>
       </ul>
     </>
