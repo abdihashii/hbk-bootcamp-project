@@ -1,0 +1,36 @@
+{
+  "voters": [
+    {
+      "id": 1,
+      "firstName": "Ken",
+      "lastName": "Bigler",
+      "address": "1 infinite loop",
+      "city": "Cupertino",
+      "birthdate": "9/3/1992",
+      "email": "Ken_Bigler@intuit.com",
+      "phone": "6505551234"
+    }
+  ],
+  "elections": [
+    {
+      "id": 1,
+      "name": "Corgis",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Do you like corgis?",
+          "yesCount": 3
+        }
+      ],
+      "voterIds": [1, 2, 3]
+    }
+  ],
+  "ballots": [
+    {
+      "id": 1,
+      "voterId": 1,
+      "electionId": 1,
+      "answers": [true, false]
+    }
+  ]
+}
