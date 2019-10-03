@@ -12,7 +12,9 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "run-p web rest",
+    "web": "react-scripts start",
+    "rest": "json-server --port 3010 db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

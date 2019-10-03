@@ -1,0 +1,34 @@
+{
+  "voters": [
+    {
+      "id": 1,
+      "firstName": "Ken",
+      "lastName": "Bigler",
+      "address": "1 infinite loop",
+      "city": "Cupertino",
+      "birthdate": "9/3/1992",
+      "email": "Ken_Bigler@intuit.com",
+      "phone": "6505551234"
+    }
+  ],
+  "elections": [
+    {
+      "id": 1,
+      "questions": [
+        "what is your favorite color?",
+        "what is your favorite number?"
+      ]
+    }
+  ],
+  "ballots": [
+    {
+      "id": 1,
+      "voterId": 1,
+      "electionId": 1,
+      "answers": [
+        "orange",
+        "3"
+      ]
+    }
+  ]
+}
