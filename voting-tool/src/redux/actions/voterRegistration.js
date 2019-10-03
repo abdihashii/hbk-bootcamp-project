@@ -1,4 +1,6 @@
 /* --------------------     Actions     -------------------- */
+export const REFRESH_ACTION_REQUEST = 'registration/REFRESH_ACTION_REQUEST';
+export const REFRESH_ACTION_DONE = 'registration/REFRESH_ACTION_DONE';
 export const CREATE_ACTION_REQUEST = 'registration/CREATE_ACTION_REQUEST';
 export const CREATE_ACTION_DONE = 'registration/CREATE_ACTION_DONE';
 export const UPDATE_ACTION_REQUEST = 'registration/UPDATE_ACTION_REQUEST';
@@ -9,6 +11,9 @@ export const DELETE_MULTIPLE_ACTION_REQUEST = 'registration/DELETE_MULTIPLE_ACTI
 export const DELETE_MULTIPLE_ACTION_DONE = 'registration/DELETE_MULTIPLE_ACTION_DONE';
 
 /* --------------------     Action Creators     -------------------- */
+export const refreshActionRequest = () => ({ type: REFRESH_ACTION_REQUEST });
+export const refreshActionDone = voters => ({ type: REFRESH_ACTION_DONE, payload: { voters } });
+
 export const createActionRequest = voter => ({ type: CREATE_ACTION_REQUEST, payload: { voter } });
 export const createActionDone = voter => ({ type: CREATE_ACTION_DONE, payload: { voter } });
 
@@ -23,6 +28,16 @@ export const deleteMultipleActionDone = removeIds => ({ type: DELETE_MULTIPLE_AC
 
 /* --------------------     Thunks     -------------------- */
 const VOTER_URL = 'http://localhost:3010/voters';
+
+export const refreshVoters = () => {
+  return dispatch => {
+    dispatch(refreshActionRequest());
+    return fetch(VOTER_URL)
+      .then(res => res.json())
+      .then(voters => dispatch(refreshActionDone(voters)));
+  };
+};
+
 export const createVoter = voter => {
   return dispatch => {
     dispatch(createActionRequest(voter));

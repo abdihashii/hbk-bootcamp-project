@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import RegisterVoter from '../components/WF1/RegisterVoter';
 
 import {
+  refreshVoters,
   createVoter,
   updateVoter,
   deleteVoter,
@@ -15,6 +16,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  refreshVoters,
   createVoter,
   updateVoter,
   deleteVoter,

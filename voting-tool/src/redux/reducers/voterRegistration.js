@@ -1,9 +1,12 @@
 import {
-  CREATE_ACTION_DONE, UPDATE_ACTION_DONE, DELETE_ACTION_DONE, DELETE_MULTIPLE_ACTION_DONE,
+  REFRESH_ACTION_DONE, CREATE_ACTION_DONE, UPDATE_ACTION_DONE, DELETE_ACTION_DONE, DELETE_MULTIPLE_ACTION_DONE,
 } from '../actions/voterRegistration';
 
 const registrationReducer = (state = [], action) => {
   switch (action.type) {
+    case REFRESH_ACTION_DONE: {
+      return action.payload.voters;
+    }
     case CREATE_ACTION_DONE: {
       return state.concat(action.payload.voter);
     }

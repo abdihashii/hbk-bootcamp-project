@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Button from '@material-ui/core/Button';
+import AddNewVoterModal from './AddNewVoterModal';
+import ListVoterModal from './ListVoterModal';
 
-const RegisterVoter = () => {
+const RegisterVoter = (props) => {
+  const { refreshVoters, createVoters, updateVoters, deleteVoters } = props;
+
+  useEffect(() => {
+    refreshVoters();
+  }, [refreshVoters]);
+
+  const [openAdd, setOpenAdd] = useState(false);
+  const [openList, setOpenList] = useState(false);
+
+  const handleAddOpen = () => setOpenAdd(true);
+  const handleAddClose = () => setOpenAdd(false);
+  const handleListOpen = () => setOpenList(true);
+  const handleListClose = () => setOpenList(false);
+
+  console.log(props);
   return (
-    <div>Register Voter Page</div>
+    <>
+      <Button variant="contained" color="primary" onClick={handleAddOpen}>Open Add</Button>
+      <Button variant="contained" color="secondary" onClick={handleListOpen}>Open List</Button>
+      <AddNewVoterModal
+        createVoters={createVoters}
+        onClose={handleAddClose}
+        open={openAdd}
+      />
+      <ListVoterModal
+        updateVoters={updateVoters}
+        deleteVoters={deleteVoters}
+        onClose={handleListClose}
+        open={openList}
+      />
+    </>
   );
 };
 
