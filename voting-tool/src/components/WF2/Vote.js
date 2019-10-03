@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from '@material-ui/core/Button';
+
 const Vote = () => {
 
   const beginBallot = () => {
@@ -18,7 +20,7 @@ const Vote = () => {
             <input type="number" id="voter-valid-input" name="voterId" />
           </div>
           <div>
-            <button type="button" onClick={beginBallot}>Submit</button>
+            <Button variant="contained" color="primary" onClick={beginBallot}>Submit</Button>
           </div>
         </form>
       </div>

@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Ballot = ({elections}) => {
-
-  console.log({elections});
-
-  // [ questions, setQuestions ] = useState([]);
 
   return (
     <>

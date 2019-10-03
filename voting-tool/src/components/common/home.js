@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from '@material-ui/core/Button';
+
 const Home = () => {
 
   const openVote = () => window.location.href = '/#/vote';
@@ -9,7 +11,7 @@ const Home = () => {
       <div>
         Home Page
       </div>
-        <button type="button" onClick={openVote}>Vote</button>
+        <Button variant="contained" color="primary" onClick={openVote}>Vote</Button>
     </div>
   );
 };
