@@ -20,7 +20,7 @@ const Ballot = ({currentElection}) => {
 
   return (
     <>
-      <div>Ballot</div>
+      <h2>Ballot</h2>
       <div>
         <form>
 
