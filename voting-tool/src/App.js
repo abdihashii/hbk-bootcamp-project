@@ -1,19 +1,35 @@
 import React from 'react';
 import Routes from './Routes';
+import Header from './components/common/header';
+import SideBar from './components/common/sideBar';
 import './App.css';
+
+const sideBarStyles = {
+  backgroundColor: '#FFBED6',
+  display: 'relative',
+  left: 0,
+  top: 0,
+  bottom: 0,
+  width: '10rem',
+  paddingTop: 10,
+  paddingBottom: 10,
+};
+const bodyStyles = {
+  display: 'flex',
+};
+const containerStyles = {
+  height: '100%',
+};
 
 function App() {
   return (
-    <>
-      <Routes />
-      <ul>
-        <li><a href="/#/">home</a></li>
-        <li><a href="/#/register">register</a></li>
-        <li><a href="/#/vote">vote</a></li>
-        <li><a href="/#/vote/ballot">ballot</a></li>
-        <li><a href="/#/create-election">create-election</a></li>
-      </ul>
-    </>
+    <div style={containerStyles}>
+      <Header />
+      <div style={bodyStyles}>
+        <SideBar style={sideBarStyles} />
+        <Routes />
+      </div>
+    </div>
   );
 }
 
