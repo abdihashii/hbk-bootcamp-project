@@ -6,7 +6,7 @@ import ListVoterModal from './ListVoterModal';
 const RegisterVoter = (props) => {
   const {
     refreshVoters, createVoter, updateVoter, deleteVoter, deleteMultipleVoters,
-    voters, sortAscAction,
+    voters, editVoterId, sortAscAction, editVoterIdAction,
   } = props;
 
   useEffect(() => {
@@ -36,6 +36,8 @@ const RegisterVoter = (props) => {
         deleteMultipleVoters={deleteMultipleVoters}
         sortAscAction={sortAscAction}
         voters={voters}
+        editId={editVoterId}
+        setEditId={editVoterIdAction}
         onClose={handleListClose}
         open={openList}
       />

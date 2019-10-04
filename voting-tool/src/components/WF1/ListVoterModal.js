@@ -11,10 +11,9 @@ const AddNewVoterModal = (props) => {
   const {
     open, onClose, voters,
     updateVoter, deleteVoter, deleteMultipleVoters,
-    sortAscAction,
+    sortAscAction, editId, setEditId,
   } = props;
 
-  const [ editId, setEditId ] = useState(-1);
   const [ isChecked, setChecked ] = useState({});
   const [ isAnythingChecked, setIsAnythingChecked ] = useState(false);
 

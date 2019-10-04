@@ -10,6 +10,7 @@ export const DELETE_ACTION_DONE = 'registration/DELETE_ACTION_DONE';
 export const DELETE_MULTIPLE_ACTION_REQUEST = 'registration/DELETE_MULTIPLE_ACTION_REQUEST';
 export const DELETE_MULTIPLE_ACTION_DONE = 'registration/DELETE_MULTIPLE_ACTION_DONE';
 export const SORT_ASC_ACTION = 'registration/SORT_ASC_ACTION';
+export const EDIT_VOTER_ACTION = 'registration/SORT_ASC_ACTION';
 
 /* --------------------     Action Creators     -------------------- */
 export const refreshActionRequest = () => ({ type: REFRESH_ACTION_REQUEST });
@@ -28,6 +29,8 @@ export const deleteMultipleActionRequest = removeIds => ({ type: DELETE_MULTIPLE
 export const deleteMultipleActionDone = removeIds => ({ type: DELETE_MULTIPLE_ACTION_DONE, payload: { removeIds } });
 
 export const sortAscAction = keyName => ({ type: SORT_ASC_ACTION, payload: { keyName } });
+
+export const editVoterIdAction = voterId => ({ type: EDIT_VOTER_ACTION, payload: { voterId } });
 
 /* --------------------     Thunks     -------------------- */
 const VOTER_URL = 'http://localhost:3010/voters';
