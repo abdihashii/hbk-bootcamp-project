@@ -17,7 +17,7 @@ export const ADD_QUESTION_DONE = 'ADD_QUESTION_DONE';
 export const createAddElection = (newElection) => ({ type: ADD_ELECTION, payload: newElection });
 export const createAddElectionDone = (newElection) => ({ type: ADD_ELECTION_DONE, payload: newElection });
 export const createAddQuestion = (id) => ({ type: ADD_QUESTION, payload: id });
-export const createAddQuestionDone = (id) => ({ type: ADD_ELECTION_DONE, payload: id });
+export const createAddQuestionDone = (id) => ({ type: ADD_QUESTION_DONE, payload: { id } });
 
 
 //reducer
@@ -28,30 +28,13 @@ const electionsReducer = (state = initialState, action) => {
 		case ADD_ELECTION_DONE:
 			return state.concat(action.payload);
 		case ADD_QUESTION_DONE:
-			let electionToChange = state.find(x => x.id === action.payload);
-			let newQuestionId = electionToChange.questions.length + 1;
-			electionToChange.questions.concat({ id: newQuestionId, text: "", yesCount: 0 });
-			let newState = state.filter(x => x.id === action.payload);
-			return newState.concat(electionToChange);
-		case 'UPDATE_BALLOTS':
-			return {
-				...state,
-				//add your own code here
-			}
+			return state
 		default:
 			return state
 	}
 };
 
 //thunks
-// export const getElection = () => {
-// 	return dispatch => {
-// 		dispatch(createAddElection(newElection));
-// 		return fetch('http://localhost:3010/elections')
-// 			.then(res => res.json())
-// 			.then(elections => dispatch(createAddElectionDone(elections)));
-// 	}
-// }
 
 export const addElection = (newElection) => {
 	return dispatch => {
@@ -66,5 +49,28 @@ export const addElection = (newElection) => {
 			);
 	}
 }
+
+// export const addQuestion = (id) => {
+// 	return dispatch => {
+// 		dispatch(createAddQuestion(id));
+
+// let electionToChange = state.find(x => x.id === action.payload.id);
+// let newQuestionId = electionToChange.questions.length + 1;
+// electionToChange.questions.concat({ id: newQuestionId, text: "", yesCount: 0 });
+// let newState = state.filter(x => x.id === action.payload);
+
+// return newState.concat(electionToChange);
+
+
+// 		return fetch('http://localhost:3010/elections/' + id, {
+// 			method: 'PUT',
+// 			headers: { 'Content-Type': 'application/json' },
+// 			body: JSON.stringify()
+// 		})
+// 			.then(res => res.json())
+// 			.then(id => dispatch(createAddQuestionDone(id))
+// 			);
+// 	}
+// }
 
 export default electionsReducer;
