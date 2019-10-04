@@ -18,7 +18,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getCurrentElection, getCurrentVoter
+  getCurrentElection, getCurrentVoter,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Ballot);
