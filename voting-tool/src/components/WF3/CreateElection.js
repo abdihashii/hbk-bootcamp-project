@@ -5,14 +5,9 @@ import { ElectionResultsTable } from './ElectionResultsTable';
 
 export const CreateElection = ({ elections, addElection, getElections }) => {
 
-
   useEffect(() => {
     getElections();
   }, [getElections]);
-
-
-
-  console.log(elections.length);
 
   //state to track the current election that is being created
   const [electionForm, setElectionForm] = useState({
@@ -57,10 +52,15 @@ export const CreateElection = ({ elections, addElection, getElections }) => {
     });
   }
 
-  let electionToShow;
+  //state to track which election results to show
+  const [electionToShow, setElectionToShow] = useState({});
+  const [showResultTable, setShowReusltTable] = useState(false);
+
+  //store election results to show
   const showResults = (id) => {
-    electionToShow = elections.find(x => x.id === id);
-    console.log('show election', id);
+    let newElection = elections.filter(x => x.id === id);
+    setElectionToShow(newElection[0]);
+    setShowReusltTable(true);
   }
 
 
@@ -87,17 +87,10 @@ export const CreateElection = ({ elections, addElection, getElections }) => {
 
     <ElectionTable elections={elections} showResults={showResults} />
 
-    <ElectionResultsTable election={electionToShow} />
+    {showResultTable && <ElectionResultsTable election={electionToShow} />}
 
   </>
 };
-
-// const QuestionForm = ({ id }) => {
-//   return <div>
-//     <label htmlFor="question-input">Question {id}: </label>
-//     <input type="text" id="question-input" name="question" key={id} value={electionForm.question} onChange={change} /></div>
-// }
-
 
 // CreateElection.propTypes = {
 // }
