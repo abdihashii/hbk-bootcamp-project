@@ -1,11 +1,9 @@
 import { 
-  REFRESH_ACTION_REQUEST, REFRESH_ACTION_DONE
+  REFRESH_ACTION_DONE
 } from '../actions/currentVoterActions';
 
 const currentVoterReducer = (state = {}, action) => {
   switch(action.type) {
-    case REFRESH_ACTION_REQUEST:
-      return action.payload;
     case REFRESH_ACTION_DONE:
       return action.payload;
     default:

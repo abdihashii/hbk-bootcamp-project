@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect, HashRouter } from 'react-router-dom';
 import RegisterVoter from './containers/VoterContainer';
-import Vote from './components/WF2/Vote';
+import Vote from './containers/VoteContainer';
 import Ballot from './components/WF2/Ballot';
 import CreateElection from './containers/ElectionContainer';
 import Home from './components/common/home';

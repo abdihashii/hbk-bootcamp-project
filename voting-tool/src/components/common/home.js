@@ -8,9 +8,6 @@ const Home = () => {
 
   return (
     <div>
-      <div>
-        Home Page
-      </div>
         <Button variant="contained" color="primary" onClick={routeToVote}>Vote</Button>
     </div>
   );
