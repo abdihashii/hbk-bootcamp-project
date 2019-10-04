@@ -6,7 +6,7 @@ export const ElectionTable = ({ elections, showResults }) => {
 
 	return <>
 		<h2>View Available Elections</h2>
-		<table>
+		<table className="electionTable">
 			<thead>
 				<tr>
 					<th>Election Name</th>

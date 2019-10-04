@@ -84,10 +84,68 @@
   "elections": [
     {
       "id": 1,
+      "name": "Corgis",
       "questions": [
-        "Do you have a favorite color?",
-        "Do you have a favorite number?"
+        {
+          "id": 1,
+          "text": "Do you like corgis?",
+          "yesCount": 0
+        }
+      ],
+      "voterIds": [
+        1,
+        2,
+        3
       ]
+    },
+    {
+      "id": 2,
+      "name": "Corgi Party",
+      "questions": [
+        {
+          "id": 1,
+          "text": "dogs?",
+          "yesCount": 0
+        },
+        {
+          "id": 2,
+          "text": "cats?",
+          "yesCount": 0
+        },
+        {
+          "id": 3,
+          "text": "birb?",
+          "yesCount": 0
+        }
+      ],
+      "voterIds": []
+    },
+    {
+      "id": 1570182727629,
+      "name": "this is atest",
+      "questions": [
+        {
+          "id": 1,
+          "text": "fds",
+          "yesCount": 0
+        },
+        {
+          "id": 2,
+          "text": "fs",
+          "yesCount": 0
+        },
+        {
+          "id": 3,
+          "text": "f",
+          "yesCount": 0
+        },
+        {
+          "id": 4,
+          "text": "sfdsdf",
+          "yesCount": 0
+        }
+      ],
+      "voterIds": []
     }
   ],
   "ballots": []
