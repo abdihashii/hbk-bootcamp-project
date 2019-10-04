@@ -1,14 +1,14 @@
 {
   "voters": [
     {
+      "id": 2,
       "firstName": "A",
       "lastName": "A",
       "address": "A",
       "city": "A",
       "birthDate": "A",
       "email": "A",
-      "phone": "A",
-      "id": 2
+      "phone": "A"
     },
     {
       "id": 3,
@@ -99,49 +99,17 @@
       ]
     },
     {
-      "id": 2,
-      "name": "Corgi Party",
+      "id": 1570211274129,
+      "name": "Cats",
       "questions": [
         {
           "id": 1,
-          "text": "dogs?",
+          "text": "Do you like cats?",
           "yesCount": 0
         },
         {
           "id": 2,
-          "text": "cats?",
-          "yesCount": 0
-        },
-        {
-          "id": 3,
-          "text": "birb?",
-          "yesCount": 0
-        }
-      ],
-      "voterIds": []
-    },
-    {
-      "id": 1570182727629,
-      "name": "this is atest",
-      "questions": [
-        {
-          "id": 1,
-          "text": "fds",
-          "yesCount": 0
-        },
-        {
-          "id": 2,
-          "text": "fs",
-          "yesCount": 0
-        },
-        {
-          "id": 3,
-          "text": "f",
-          "yesCount": 0
-        },
-        {
-          "id": 4,
-          "text": "sfdsdf",
+          "text": "Do you own cats?",
           "yesCount": 0
         }
       ],

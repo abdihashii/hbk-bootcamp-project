@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 
 import { Checkbox, Button } from '@material-ui/core';
 
-const Ballot = ({currentElection}) => {
+const Ballot = ({ currentVoter, currentElection, updateElection }) => {
+  console.log(currentVoter, currentElection);
+  // TODO: on validation, get current voter
+  // TODO: create an election selection splash page
+  // TODO: after selecting election, get current election dynamically (rather than hard coded)
+  // TODO: connect the redux action on submit (action already created)
 
   const [ isChecked, setChecked ] = useState({});
 
@@ -16,6 +21,17 @@ const Ballot = ({currentElection}) => {
       ...isChecked,
       [questionId]: !isChecked[questionId]
     })
+  };
+
+  const handleSubmit = () => {
+    window.location.href = '/#/vote/';
+
+    // const election = currentElection;
+
+    // election.voterIds.push(currentVoter.id);
+    // election.questions needs to be updated
+    
+    // updateElection(election);
   };
 
   return (
@@ -35,7 +51,7 @@ const Ballot = ({currentElection}) => {
           })}
 
           <div>
-            <Button variant="contained" color="primary">Cast Vote</Button>
+            <Button variant="contained" color="primary" onClick={handleSubmit}>Cast Vote</Button>
           </div>
         </form>
       </div>

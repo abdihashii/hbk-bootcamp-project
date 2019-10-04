@@ -10,6 +10,8 @@ import {
   getCurrentElection,
 } from '../redux/actions/currentElectionActions';
 
+import { updateElection } from '../redux/createElectionRedux';
+
 const mapStateToProps = state => {
   return {
     currentVoter: state.currentVoter,
@@ -18,7 +20,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getCurrentElection, getCurrentVoter,
+  getCurrentElection, getCurrentVoter, updateElection,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Ballot);

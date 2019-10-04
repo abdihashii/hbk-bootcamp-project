@@ -13,12 +13,17 @@ export const ADD_ELECTION_DONE = 'ADD_ELECTION_DONE';
 export const GET_ELECTIONS = 'GET_ELECTIONS';
 export const GET_ELECTIONS_DONE = 'GET_ELECTIONS_DONE';
 
+export const UPDATE_ELECTIONS_REQUEST = 'UPDATE_ELECTIONS_REQUEST';
+export const UPDATE_ELECTIONS_DONE = 'UPDATE_ELECTIONS_DONE';
+
 //action creator
 export const createAddElection = (newElection) => ({ type: ADD_ELECTION, payload: newElection });
 export const createAddElectionDone = (newElection) => ({ type: ADD_ELECTION_DONE, payload: newElection });
 export const createGetElections = (elections) => ({ type: GET_ELECTIONS, payload: elections });
 export const createGetElectionsDone = (elections) => ({ type: GET_ELECTIONS_DONE, payload: elections });
 
+export const createUpdateElectionsRequest = (elections) => ({ type: UPDATE_ELECTIONS_REQUEST, payload: elections });
+export const createUpdateElectionsDone = (elections) => ({ type: UPDATE_ELECTIONS_DONE, payload: elections });
 
 //reducer
 const electionsReducer = (state = [], action) => {
@@ -33,7 +38,6 @@ const electionsReducer = (state = [], action) => {
 };
 
 //thunks
-
 export const getElections = () => {
 	return dispatch => {
 		dispatch(createGetElections());
@@ -54,6 +58,20 @@ export const addElection = (newElection) => {
 		})
 			.then(res => res.json())
 			.then(election => dispatch(createAddElectionDone(election)));
+	}
+}
+
+export const updateElection = (election) => {
+	return dispatch => {
+		dispatch(createUpdateElectionsRequest(election));
+		return fetch(`http://localhost:3010/elections/${encodeURIComponent(election.id)}`, {
+			method: 'PUT',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(election)
+		})
+			.then(res => res.json())
+			.then(() => dispatch(createUpdateElectionsDone(election)))
+			.then(() => dispatch(getElections()));
 	}
 }
 
