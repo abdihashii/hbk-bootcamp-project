@@ -59,8 +59,10 @@ const AddNewVoterModal = (props) => {
       <DialogTitle>List Voters</DialogTitle>
       <DialogContent>
         <table>
-          <tbody>
+          <thead>
             <ListTableHeader sortAscAction={sortAscAction} />
+          </thead>
+          <tbody>
             { voters.map((voter, i) => {
               const isEditing = editId === i;
               const onEdit = () => !isEditing ? setEditId(i) : setEditId(-1);

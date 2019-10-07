@@ -10,7 +10,7 @@ export const DELETE_ACTION_DONE = 'registration/DELETE_ACTION_DONE';
 export const DELETE_MULTIPLE_ACTION_REQUEST = 'registration/DELETE_MULTIPLE_ACTION_REQUEST';
 export const DELETE_MULTIPLE_ACTION_DONE = 'registration/DELETE_MULTIPLE_ACTION_DONE';
 export const SORT_ASC_ACTION = 'registration/SORT_ASC_ACTION';
-export const EDIT_VOTER_ACTION = 'registration/SORT_ASC_ACTION';
+export const EDIT_VOTER_ACTION = 'registration/EDIT_VOTER_ACTION';
 
 /* --------------------     Action Creators     -------------------- */
 export const refreshActionRequest = () => ({ type: REFRESH_ACTION_REQUEST });
@@ -34,6 +34,7 @@ export const editVoterIdAction = voterId => ({ type: EDIT_VOTER_ACTION, payload:
 
 /* --------------------     Thunks     -------------------- */
 const VOTER_URL = 'http://localhost:3010/voters';
+const headers = { 'Content-Type': 'application/json' };
 
 export const refreshVoters = () => {
   return dispatch => {
@@ -49,11 +50,12 @@ export const createVoter = voter => {
     dispatch(createActionRequest(voter));
     return fetch(VOTER_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers,
       body: JSON.stringify(voter)
     })
       .then(res => res.json())
-      .then(v => dispatch(createActionDone(v)));
+      .then(v => dispatch(createActionDone(v)))
+      .then(() => dispatch(refreshVoters()));
   };
 };
 
@@ -62,11 +64,12 @@ export const updateVoter = voter => {
     dispatch(updateActionRequest(voter));
     return fetch(`${VOTER_URL}/${encodeURIComponent(voter.id)}`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers,
       body: JSON.stringify(voter),
     })
       .then(res => res.json())
-      .then(() => dispatch(updateActionDone(voter)));
+      .then(() => dispatch(updateActionDone(voter)))
+      .then(() => dispatch(refreshVoters()));
   };
 };
 
@@ -76,7 +79,8 @@ export const deleteVoter = id => {
     return fetch(`${VOTER_URL}/${id}`, {
       method: 'DELETE',
     })
-      .then(() => dispatch(deleteActionDone(id)));
+      .then(() => dispatch(deleteActionDone(id)))
+      .then(() => dispatch(refreshVoters()));
   };
 };
 

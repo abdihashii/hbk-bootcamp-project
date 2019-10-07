@@ -31,16 +31,6 @@
       "id": 4
     },
     {
-      "id": 5,
-      "firstName": "Q",
-      "lastName": "Q",
-      "address": "Q",
-      "city": "Q",
-      "birthDate": "Q",
-      "email": "Q",
-      "phone": "Q"
-    },
-    {
       "firstName": "Z",
       "lastName": "Z",
       "address": "Z",
@@ -51,34 +41,14 @@
       "id": 6
     },
     {
-      "firstName": "R",
-      "lastName": "R",
-      "address": "R",
-      "city": "R",
-      "birthDate": "R",
-      "email": "R",
-      "phone": "R",
-      "id": 7
-    },
-    {
+      "id": 8,
       "firstName": "W",
-      "lastName": "W",
+      "lastName": "Y",
       "address": "W",
       "city": "W",
       "birthDate": "W",
       "email": "W",
-      "phone": "W",
-      "id": 8
-    },
-    {
-      "firstName": "E",
-      "lastName": "E",
-      "address": "E",
-      "city": "E",
-      "birthDate": "E",
-      "email": "E",
-      "phone": "E",
-      "id": 9
+      "phone": "W"
     }
   ],
   "elections": [
@@ -110,6 +80,28 @@
         {
           "id": 2,
           "text": "Do you own cats?",
+          "yesCount": 0
+        }
+      ],
+      "voterIds": []
+    },
+    {
+      "id": 1570213894862,
+      "name": "DO YOU LIKE CORGIS",
+      "questions": [
+        {
+          "id": 1,
+          "text": "ASDFG",
+          "yesCount": 0
+        },
+        {
+          "id": 2,
+          "text": "ADSF",
+          "yesCount": 0
+        },
+        {
+          "id": 3,
+          "text": "DSFG",
           "yesCount": 0
         }
       ],

@@ -7,21 +7,22 @@ const registrationReducer = (state = [], action) => {
     case REFRESH_ACTION_DONE: {
       return action.payload.voters;
     }
-    case CREATE_ACTION_DONE: {
-      return state.concat({ id: state[state.length - 1].id + 1, ...action.payload.voter });
-    }
-    case UPDATE_ACTION_DONE: {
-      const editedIdx = state.findIndex(voter => voter.id === action.payload.voter.id);
-      state.splice(editedIdx, 1, action.payload.voter);
-      return [...state];
-    }
-    case DELETE_ACTION_DONE: {
-      const removedIdx = state.findIndex(voter => voter.id === action.payload.id);
-      state.splice(removedIdx, 1);
-      return [...state];
-    }
+    // case CREATE_ACTION_DONE: {
+    //   return state.concat({ id: state[state.length - 1].id + 1, ...action.payload.voter });
+    // }
+    // case UPDATE_ACTION_DONE: {
+    //   const editedIdx = state.findIndex(voter => voter.id === action.payload.voter.id);
+    //   state.splice(editedIdx, 1, action.payload.voter);
+    //   return [...state];
+    // }
+    // case DELETE_ACTION_DONE: {
+    //   const removedIdx = state.findIndex(voter => voter.id === action.payload.id);
+    //   state.splice(removedIdx, 1);
+    //   return [...state];
+    // }
     case SORT_ASC_ACTION: {
-      state.sort((a, b) => {
+      const temp = [...state];
+      temp.sort((a, b) => {
         if (a[action.payload.keyName] < b[action.payload.keyName]) {
           return -1;
         } else if (a[action.payload.keyName] > b[action.payload.keyName]) {
@@ -30,7 +31,7 @@ const registrationReducer = (state = [], action) => {
           return 0;
         }
       });
-      return [...state];
+      return temp;
     }
     default:
       return state;
